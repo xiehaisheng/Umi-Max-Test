@@ -24,7 +24,5 @@
 ## 解决 commit 无法检测问题
 
 ```
-npm run prepare
-或
 chmod 777 .husky/*
 ```
