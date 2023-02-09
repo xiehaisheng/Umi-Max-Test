@@ -20,3 +20,11 @@
 - improvement: 改进
 - build: 打包
 - ci: 持续集成
+
+### 解决 commit 无法检测问题
+
+```
+npm run prepare
+或
+chmod 777 .husky/*
+```
