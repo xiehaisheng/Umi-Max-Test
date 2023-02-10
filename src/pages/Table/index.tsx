@@ -82,6 +82,10 @@ const handleRemove = async (selectedRows: API.UserInfo[]) => {
   }
 };
 
+const onBtn = async () => {
+  // await getResources({});
+};
+
 const TableList: React.FC<unknown> = () => {
   const [createModalVisible, handleModalVisible] = useState<boolean>(false);
   const [updateModalVisible, handleUpdateModalVisible] =
@@ -133,7 +137,7 @@ const TableList: React.FC<unknown> = () => {
             配置
           </a>
           <Divider type="vertical" />
-          <a href="">订阅警报</a>
+          <a onClick={onBtn}>订阅警报</a>
         </>
       ),
     },

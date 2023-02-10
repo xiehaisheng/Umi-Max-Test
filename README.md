@@ -23,6 +23,16 @@
 
 ## 解决 commit 无法检测问题
 
-```
+```bash
 chmod 777 .husky/*
 ```
+
+## 动态加载路由
+
+src/app.tsx 通过 export layout 应该可以定制 ProLayout。
+
+umi layout 的底层就是 [ProLayout]('https://procomponents.ant.design/components/layout#menu')
+
+## 请求
+
+## 数据流

@@ -2,6 +2,27 @@
 // 该文件由 OneAPI 自动生成，请勿手动修改！
 import { request } from '@umijs/max';
 
+export const getResources = async (params: any) => {
+  return request('/new-api/api/user/getResources', {
+    method: 'get',
+    params: {
+      ...params,
+    },
+  });
+};
+
+export const queryUserInfo = async () => {
+  return request('/api/v1/queryUserInfo', {
+    method: 'get',
+  });
+};
+
+export const getRoutes = async () => {
+  return request('/api/system/routes', {
+    method: 'get',
+  });
+};
+
 /** 此处后端没有提供注释 GET /api/v1/queryUserList */
 export async function queryUserList(
   params: {
