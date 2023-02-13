@@ -40,3 +40,11 @@ services/页面名称
 ## 数据流
 
 models/业务名称
+
+## 开发
+
+本地开发插入依赖 npm i 开发编译 npm start
+
+## 线上
+
+编译 npm run build
