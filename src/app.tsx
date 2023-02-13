@@ -1,9 +1,9 @@
 // 运行时配置
 
-// import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { RunTimeLayoutConfig } from '@umijs/max';
 import { message } from 'antd';
-// import { useState } from 'react';
+import { useState } from 'react';
 import { HeaderContent } from './components/LayoutRender';
 import { getRoutes, queryUserInfo } from './services/demo/UserController';
 
@@ -14,14 +14,14 @@ export async function getInitialState(): Promise<{ name: string }> {
   return { name: data.name };
 }
 
-export const layout: RunTimeLayoutConfig = () => {
-  // const [collapsed, setCollapsed] = useState(false);
+const Layout: RunTimeLayoutConfig = () => {
+  const [collapsed, setCollapsed] = useState(false);
 
   return {
     title: '社区管理平台',
     logo: null,
     layout: 'mix',
-    // collapsed: collapsed,
+    collapsed: collapsed,
     menu: {
       locale: false,
       request: async () => {
@@ -43,25 +43,25 @@ export const layout: RunTimeLayoutConfig = () => {
         colorBgMenuItemSelected: 'rgba(230,243,254,1)',
       },
     },
-    // collapsedButtonRender: (collapsed) => {
-    //   console.log(collapsed, 'collapsed=====');
-
-    //   return (
-    //     <div
-    //       onClick={() => setCollapsed(!collapsed)}
-    //       style={{
-    //         cursor: 'pointer',
-    //         fontSize: '16px',
-    //         display: 'flex',
-    //         justifyContent: 'center',
-    //         paddingBottom: '20px',
-    //       }}
-    //     >
-    //       {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-    //     </div>
-    //   );
-    // },
+    collapsedButtonRender: () => {
+      return (
+        <div
+          onClick={() => setCollapsed(!collapsed)}
+          style={{
+            cursor: 'pointer',
+            fontSize: '16px',
+            display: 'flex',
+            justifyContent: 'center',
+            paddingBottom: '20px',
+          }}
+        >
+          {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+        </div>
+      );
+    },
     headerContentRender: () => <HeaderContent />,
     rightContentRender: () => <></>,
   };
 };
+
+export const layout = Layout;
